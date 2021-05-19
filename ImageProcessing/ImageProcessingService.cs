@@ -119,7 +119,7 @@ namespace MosaicApp.ImageProcessing
         private static Bitmap Base64ToImage(string base64)
         {
             if (base64.Contains(","))
-                base64 = base64.Split(",")[1];
+                base64 = base64.Split(",").Last();
 
             var arr = Convert.FromBase64String(base64);
             var ms = new MemoryStream(arr);
